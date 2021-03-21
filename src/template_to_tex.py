@@ -9,16 +9,27 @@ def print_usage():
 def valid_file(arg):
     return (os.path.exists(arg) and os.path.isfile(arg))
 
+def count_chars(arg_list):
+    c = 0
+    for string in arg_list:
+        c += len(string)
+    return c
+
 def make_latex(title, persone, preparazione, cottura, costo, ing_list, steps_list):
+    
+    chars_in_steps = count_chars(steps_list)
     
     # number of steps for a Large font size
     max_steps = 5
-    max_ingr = 8
+    max_chars = 650
+    # number of ingredients for Large font size
+    max_ingr = 10
     
     print("\chapter{"+ title +"}")
     print("\infotable{" + persone + "}{" + preparazione + " minuti}{"+ cottura + " minuti}{" + costo + "}")
     
-    if len(steps_list) > max_steps or len(ing_list) > max_ingr:
+    #if len(steps_list) > max_steps or len(ing_list) > max_ingr:
+    if chars_in_steps > max_chars or len(ing_list) > max_ingr:
         print("\large")
     else:
         print("\Large")
@@ -37,6 +48,7 @@ def make_latex(title, persone, preparazione, cottura, costo, ing_list, steps_lis
     for item in steps_list:
         print("\item " + item)  
     print("\end{enumerate}")
+    # restore default text size
     print("\\normalsize")
     
 def main(arg):

@@ -18,7 +18,6 @@ Ingredienti
 - 150 gr zucchero a velo
 - 150 gr gocce di cioccolato fondente
 
-
 Preparazione
 
 - Mettere in una ciotola la farina, il burro, lo zucchero, la scorza, i rossi delle uova e il sale e impastare fino ad ottenere una pasta frolla
