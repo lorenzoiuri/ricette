@@ -3,7 +3,7 @@ Torta salata porri e pancetta
 - persone 6
 - preparazione 10
 - cottura 40
-- costo basso
+- costo medio
 
 Ingredienti
 

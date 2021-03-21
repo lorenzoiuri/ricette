@@ -10,5 +10,6 @@ primi secondi antipasti dolci:
 	rm -f *.log *.aux *.out
 
 clean:
+	echo -n "" > recipes.tex
 	rm -f content/*/*.tex
 	rm -f *.log *.aux *.out *.pdf

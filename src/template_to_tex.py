@@ -10,9 +10,19 @@ def valid_file(arg):
     return (os.path.exists(arg) and os.path.isfile(arg))
 
 def make_latex(title, persone, preparazione, cottura, costo, ing_list, steps_list):
+    
+    # number of steps for a Large font size
+    max_steps = 5
+    max_ingr = 8
+    
     print("\chapter{"+ title +"}")
     print("\infotable{" + persone + "}{" + preparazione + " minuti}{"+ cottura + " minuti}{" + costo + "}")
-    print("\Large")
+    
+    if len(steps_list) > max_steps or len(ing_list) > max_ingr:
+        print("\large")
+    else:
+        print("\Large")
+    
     print("\section*{Ingredienti}")
     
     print("\\begin{ingredients}")
@@ -27,6 +37,7 @@ def make_latex(title, persone, preparazione, cottura, costo, ing_list, steps_lis
     for item in steps_list:
         print("\item " + item)  
     print("\end{enumerate}")
+    print("\\normalsize")
     
 def main(arg):
     if not valid_file(arg):
