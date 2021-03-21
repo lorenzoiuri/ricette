@@ -1,0 +1,17 @@
+\makeatletter
+\setlength\midchapskip{10pt}
+\makechapterstyle{antipasti}{
+    \renewcommand\chapternamenum{}
+    \renewcommand\printchaptername{}
+    \renewcommand\chapnamefont{\Large\scshape}
+    \renewcommand\printchapternum{
+        \chapnamefont\null\thickhrulefill\quad
+        Antipasto\quad\thickhrulefill}
+    \renewcommand\chaptitlefont{\Huge\scshape\centering}
+    \renewcommand\afterchapternum{
+        \par\nobreak\vskip\midchapskip\hrule\vskip\midchapskip}
+    \renewcommand\afterchaptertitle{
+        %\par\vskip\midchapskip\hrule\nobreak\vskip\afterchapskip}
+        \par\vskip\midchapskip\hrule\nobreak\vskip0.66cm}
+}
+\makeatother

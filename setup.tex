@@ -1,0 +1,75 @@
+
+% using twoside sets swaps left and right margins on even and odd pages
+\documentclass[a4paper,extrafontsizes,11pt,oneside]{memoir}
+
+% set the margins: 2.0 at the right, 2.0*1.618(golden ratio) to the left, 
+\setlrmarginsandblock{2.0cm}{*}{1.0}
+\setulmarginsandblock{1.0cm}{*}{1.0}
+\setheaderspaces{*}{*}{1}
+\checkandfixthelayout
+
+\pagestyle{plain}
+\pagenumbering{gobble}  % no page numbers
+
+\usepackage[T1]{fontenc} % to render the italian letters
+\usepackage{lmodern} % to avoid bitmap fonts
+\usepackage[utf8]{inputenc} % to write the italian letters in the source code
+\usepackage[italian]{babel} % to have italian title, labels, ecc
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{setspace}  % to have space between lines when needed
+\OnehalfSpacing*
+\usepackage{graphicx}  % to include images
+\usepackage{multicol}  % to have itemize on multiple columns
+\usepackage{enumitem}  % to have no space before itemize
+\usepackage{array}     % for centered text in tables
+\usepackage{hyperref}  % for page numbering
+\usepackage{emptypage} % for blank pages without number
+\usepackage{lipsum}    % for lorem ipsum generation
+%\usepackage{caption}   % to have captions inside floats
+%\usepackage{capt-of}   % to have captions outside floats
+\usepackage[autostyle=false,style=american]{csquotes} % to automatically manage quotations "
+\MakeOuterQuote{"}
+
+\setlength{\beforesecskip}{\baselineskip}  % set custom space after section header
+\setlength{\aftersecskip}{1mm}  % set custom space after section header
+
+% macro to have text in column centered with fixed column width
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+% macro for creating the information table
+\newcommand{\infotable}[4]{
+    \begin{center}
+        \begin{tabular}{ P{20mm} P{35mm} P{35mm} P{20mm} }
+            \includegraphics[height=5mm]{res/icons/group.pdf} &
+            \includegraphics[height=5mm]{res/icons/time.pdf} & 
+            \includegraphics[height=5mm]{res/icons/oven.pdf} & 
+            \includegraphics[height=5mm]{res/icons/price.pdf} \\
+            persone &
+            tempo preparazione & 
+            tempo cottura & 
+            costo \\
+            \hline\hline
+            #1 \rule{0pt}{4ex} & #2 & #3 & #4 \\
+        \end{tabular}
+    \end{center}
+}
+
+\newenvironment{ingredients}{
+    \begin{multicols}{2}
+        \begin{itemize}[topsep=0pt]
+}{
+        \end{itemize}
+    \end{multicols}
+}
+
+% defining the style for the chapters
+\makeatletter
+\def\thickhrulefill{\leavevmode \leaders \hrule height 1ex \hfill \kern \z@}
+\input{chapterstyles/dolci.tex}
+\input{chapterstyles/antipasti.tex}
+\input{chapterstyles/primi.tex}
+\input{chapterstyles/secondi.tex}
