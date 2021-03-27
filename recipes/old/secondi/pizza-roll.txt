@@ -1,0 +1,21 @@
+Pizza roll
+
+- persone 4
+- preparazione 20
+- cottura 20
+- costo medio
+
+Ingredienti
+
+- 1 pasta per pizza rettangolare
+- 100 gr di passata di pomodoro
+- 8 fette di scamorza
+- 200 gr di prosciutto cotto
+
+Preparazione
+
+- Srotolare la pasta per pizza e ricoprirla di passata di pomodoro. 
+- Sistemare le fette di scamorza e il prosciutto. 
+- Arrotolare la pasta sul lato più lungo fino ad ottenere un rotolo, tagliarlo in 8 parti circa.
+- Sistemare i pizza roll in una pirofila rivestita di carta forno.
+- Cuocere per 20 minuti a 180°.
