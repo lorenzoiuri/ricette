@@ -1,0 +1,5 @@
+.content/*/*
+*.log 
+*.aux 
+*.out
+*.pdf

@@ -1,10 +1,12 @@
 
 all:
-	@echo "specificare categoria"
-	@echo "make primi | secondi | antipasti | dolci"
+	@echo "specificare categoria e modalita'"
+	@echo "make <course> MODE=<mode>"
+	@echo "    <course>: primi | secondi | dolci | antipasti"
+	@echo "    <mode>  : old | new"
 
 primi secondi antipasti dolci:
-	./src/convert.sh $@
+	./src/convert.sh $@ $(MODE)
 	./src/make_list.sh $@
 	pdflatex --jobname=$@ compileme.tex
 	rm -f *.log *.aux *.out

@@ -6,8 +6,11 @@ Questo progetto consente di compilare ed impaginare un ricettario partendo da se
 
 1. Descrivere la ricetta nel formato markdown-like specificato sotto
 2. Ogni ricetta deve essere indicata in un file dedicato
-3. I file con le ricette devono essere posti in `recipes/<type>/`
-4. Eseguire `make <type>` per generare il ricettario per le ricette di tipo `<type>`, ad esempio `make primi` genererà il PDF con le ricette dei primi
+3. I file con le ricette devono essere posti in `recipes/<mode>/<course>/`
+4. Eseguire `make <course> MODE=<mode>` per generare il ricettario per le ricette di tipo `<course>`, ad esempio `make primi MODE=old` genererà il PDF con le ricette dei primi poste in `recipes/old/primi/`
+
+La distinzione tra `<mode>` serve per consentire di generare il pdf contenente soltanto le nuove ricette
+(poste nella cartella `recipes/new/`)
 
 ## Esempio ricetta in formato markdown-like
 
