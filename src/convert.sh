@@ -13,7 +13,7 @@ if [ $# -eq 1 ]
     mode=$2
 fi
 
-
+mkdir -p content/$1
 for filename in recipes/$mode/$1/*.txt; do
     basename=`basename $filename .txt`
     python3 src/template_to_tex.py $filename > content/$1/$basename.tex
