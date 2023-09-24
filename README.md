@@ -44,3 +44,11 @@ Preparazione
 
 ![example](./readme/example.png)
 
+## Eseguire in container docker
+
+```shell
+podman run -it --name texlive -v /home/user/git/ricette:/ricette:Z texlive/texlive:TL2022-historic
+# cd /ricette
+# make primi MODE=old (example)
+```
+
