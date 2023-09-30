@@ -1,4 +1,5 @@
-.content/*/*
+content/*/*
+recipes.tex
 *.log 
 *.aux 
 *.out
